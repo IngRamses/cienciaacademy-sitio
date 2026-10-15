@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cienc-IA Academy - Ciencia que evoluciona contigo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS para la paleta de colores */
+        :root {
+            --azul-profundo: #0A2647;
+            --cian-brillante: #00B4D8;
+            --blanco-puro: #FFFFFF;
+            --verde-cientifico: #52B788;
+            --gris-neutro: #D9D9D9;
+        }
+
+        /* Estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--azul-profundo);
+            line-height: 1.6;
+            background-color: var(--blanco-puro);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--azul-profundo);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cian-brillante);
+            color: var(--blanco-puro);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--azul-profundo);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--azul-profundo);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--cian-brillante);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco-puro);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('assets/images/hero/hero-home.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Why Section */
+        .why-section {
+            background-color: var(--blanco-puro);
+        }
+
+        .why-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .why-card h3 {
+            color: var(--cian-brillante);
+            margin-bottom: 1rem;
+        }
+
+        .why-card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-card-icon img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            background-color: var(--gris-neutro);
+        }
+
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .course-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-card-content {
+            padding: 1.5rem;
+        }
+
+        .course-card h3 {
+            color: var(--azul-profundo);
+        }
+
+        /* Model 4C Section */
+        .model-section {
+            background-color: var(--blanco-puro);
+        }
+
+        .model-4c {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .model-step {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .model-step-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--cian-brillante);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--blanco-puro);
+            font-size: 1.5rem;
+        }
+
+        .model-step h3 {
+            color: var(--azul-profundo);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--cian-brillante);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--cian-brillante);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--azul-profundo);
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                margin: 0;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <!-- Logo con ruta correcta -->
+            <a href="#inicio" aria-label="Ir al inicio"><img src="assets/images/general/logo-ciencia-academy.png" alt="Cienc-IA Academy" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="pages/modelo-academico.html">Modelo Académico</a></li>
+                    <li><a href="pages/oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="pages/innovacion-ia.html">Innovación IA</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="pages/contacto.html" class="btn">Únete a la lista de interés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Aprende Cienc-IA con Inteligec-IA.</h1>
+            <h1>El futuro de la ciencia se aprende hoy.</h1>
+            <p>En Cienc-IA Academy ofrecemos formación científica y trabajamos en herramientas de IA para acompañar el aprendizaje.</p>
+            <a href="#cursos" class="btn">Descubre nuestros cursos</a>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section" id="nosotros">
+        <div class="container">
+            <h2 class="section-title">¿Por qué Cienc-IA Academy?</h2>
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assets/images/icons/icon-pedagogia.svg" alt="Pedagogía Científica">
+                    </div>
+                    <h3>Pedagogía Científica Moderna</h3>
+                    <p>Nuestro enfoque combina explicación, práctica guiada y retroalimentación.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assets/images/icons/icon-ia.svg" alt="IA Personalizada">
+                    </div>
+                    <h3>IA Personalizada</h3>
+                    <p>Estamos desarrollando herramientas de IA para adaptar actividades al ritmo y las necesidades de aprendizaje de cada estudiante.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assets/images/icons/icon-docentes.svg" alt="Docentes Amplificados">
+                    </div>
+                    <h3>Docentes Amplificados</h3>
+                    <p>Nuestra propuesta de IA busca apoyar al docente y facilitar una atención más personalizada cuando las herramientas estén disponibles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="cursos">
+        <div class="container">
+            <h2 class="section-title">Nuestra Oferta Educativa</h2>
+            <div class="course-cards">
+                <div class="course-card">
+                    <div class="course-card-img">
+                        <img src="assets/images/courses/curso-regulares.jpg" alt="Cursos Regulares">
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Generación fundadora 2027-A <br> </h3>
+                        <br>
+                        <p>Matemáticas, Física, Química y Biología en vivo para 2.º y 3.º de secundaria. 8 lugares. Inicio: 8 de febrero de 2027.</p>
+                        <a href="pages/oferta-educativa.html" class="btn">Más información</a>
+                        
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-card-img">
+                        <img src="assets/images/courses/curso-preparatoria.jpg" alt="Curso de Ingreso a Preparatoria">
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Curso de Ingreso a Preparatoria</h3>
+                        <p>Fortalecer competencias académicas básicas para el examen de ingreso a preparatoria.</p>
+                        <span class="btn" style="cursor: default;">Próximamente</span>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-card-img">
+                        <img src="assets/images/courses/curso-universidad.jpg" alt="Curso de Ingreso a Universidad">
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Curso de Ingreso a Universidad</h3>
+                        <p>Repaso de contenidos académicos para preparar procesos de ingreso a universidad.</p>
+                        <span class="btn" style="cursor: default;">Próximamente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model 4C Section -->
+    <section class="model-section" id="modelo">
+        <div class="container">
+            <h2 class="section-title">Nuestro Modelo Académico: Metodología 4C</h2>
+            <div class="model-4c">
+                <div class="model-step">
+                    <div class="model-step-icon">1</div>
+                    <h3>Comprender</h3>
+                    <p>Fundamentos teóricos sólidos mediante explicaciones claras y ejemplos concretos.</p>
+                </div>
+                <div class="model-step">
+                    <div class="model-step-icon">2</div>
+                    <h3>Conectar</h3>
+                    <p>Aplicaciones prácticas y transversales que vinculan conceptos con situaciones reales.</p>
+                </div>
+                <div class="model-step">
+                    <div class="model-step-icon">3</div>
+                    <h3>Crear</h3>
+                    <p>Resolución de problemas reales y desarrollo de proyectos científicos propios.</p>
+                </div>
+                <div class="model-step">
+                    <div class="model-step-icon">4</div>
+                    <h3>Comunicar</h3>
+                    <p>Presentación científica efectiva y trabajo colaborativo para compartir conocimientos.</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="pages/innovacion-ia.html" class="btn">Conoce nuestras herramientas de IA en desarrollo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para comenzar tu viaje científico?</h2>
+            <p>Conoce nuestra oferta educativa y las herramientas tecnológicas que estamos desarrollando.</p>
+            <a href="pages/contacto.html" class="btn" style="background-color: var(--verde-cientifico);">Solicita más información</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cienc-IA Academy</h3>
+                    <p>"Aprende ciencia con inteligencia"</p>
+                    <p>La inteligencia humana y la inteligencia artificial se unen para formar mentes científicas del futuro.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="pages/nosotros.html">Nosotros</a></li>
+                        <li><a href="pages/modelo-academico.html">Modelo Académico</a></li>
+                        <li><a href="pages/oferta-educativa.html">Oferta Educativa</a></li>
+                        <li><a href="pages/innovacion-ia.html">Innovación IA</a></li>
+                        <li><a href="pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@cienciaacademy.org</p>
+                    <p>Horario: Lunes a Viernes 9:00 - 18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cienc-IA Academy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

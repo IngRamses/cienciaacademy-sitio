@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Cienc-IA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-profundo: #0A2647;
+            --cian-brillante: #00B4D8;
+            --blanco-puro: #FFFFFF;
+            --verde-cientifico: #52B788;
+            --gris-neutro: #D9D9D9;
+            --azul-iconos: #1A4B8C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--azul-profundo);
+            line-height: 1.6;
+            background-color: var(--blanco-puro);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--azul-profundo);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cian-brillante);
+            color: var(--blanco-puro);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--azul-profundo);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--azul-profundo);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco-puro);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-about {
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('../assets/images/hero/hero-nosotros.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        /* Purpose Section */
+        .purpose-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .purpose-section h2 {
+            color: var(--cian-brillante);
+            margin-bottom: 2rem;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .mission-card, .vision-card {
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background-color: var(--gris-neutro);
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .value-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(22%) sepia(70%) saturate(1500%) hue-rotate(200deg) brightness(90%) contrast(90%);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--azul-profundo);
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                margin: 0;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" aria-label="Ir al inicio"><img src="../assets/images/general/logo-ciencia-academy.png" alt="Cienc-IA Academy" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                    <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html" class="btn">Únete a la lista de interés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container">
+            <h1>Nosotros</h1>
+            <p>Conoce más sobre nuestra misión, visión y el equipo que hace posible Cienc-IA Academy</p>
+        </div>
+    </section>
+
+    <!-- Purpose Section -->
+    <section class="purpose-section">
+        <div class="container">
+            <h2>Nuestro Propósito: Donde la Ciencia y la IA se Encuentran</h2>
+            <p>En Cienc-IA Academy, fusionamos el rigor científico con la innovación tecnológica para crear una experiencia educativa única y transformadora.</p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section>
+        <div class="container">
+            <div class="mission-vision">
+                <div class="mission-card">
+                    <h3>Misión</h3>
+                    <p>Formar estudiantes con pensamiento científico, crítico y ético mediante una enseñanza personalizada e impulsada por inteligencia artificial, que integre las ciencias básicas —matemáticas, física, química y biología— con competencias digitales para enfrentar los retos académicos y tecnológicos del siglo XXI.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Visión</h3>
+                    <p>Ser el instituto líder en educación científica asistida por inteligencia artificial en América Latina, reconocido por su excelencia académica, innovación pedagógica y capacidad de inspirar a las nuevas generaciones de científicos, ingenieros y pensadores del futuro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy-section">
+        <div class="container">
+            <h2 class="section-title">Nuestra Filosofía: La IA amplifica al docente</h2>
+            <div class="philosophy-content">
+                <p>Creemos que el aprendizaje de las ciencias debe ser vivencial, accesible y dinámico. En Cienc-IA Academy, la Inteligencia Artificial no sustituye al docente: lo amplifica.</p>
+                <p style="margin-top: 1.5rem;">Nuestro enfoque une el rigor académico con el diseño de herramientas de IA en desarrollo. Buscamos apoyar la comprensión científica sin sustituir la orientación docente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="../assets/images/icons/icon-innovacion.svg" alt="Innovación">
+                    </div>
+                    <h3>Innovación</h3>
+                    <p>Promovemos el uso ético y creativo de la IA para transformar la enseñanza y el aprendizaje.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="../assets/images/icons/icon-excelencia.svg" alt="Excelencia">
+                    </div>
+                    <h3>Excelencia</h3>
+                    <p>Buscamos la mejora continua en cada clase, programa y tecnología que aplicamos.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="../assets/images/icons/icon-curiosidad.svg" alt="Curiosidad Científica">
+                    </div>
+                    <h3>Curiosidad Científica</h3>
+                    <p>Fomentamos la exploración, la observación y el razonamiento lógico como pilares del conocimiento.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="../assets/images/icons/icon-inclusion.svg" alt="Inclusión">
+                    </div>
+                    <h3>Inclusión</h3>
+                    <p>Ofrecemos educación accesible y adaptada a distintos ritmos de aprendizaje y contextos.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="../assets/images/icons/icon-responsabilidad.svg" alt="Responsabilidad Social">
+                    </div>
+                    <h3>Responsabilidad Social</h3>
+                    <p>Aplicamos la ciencia y la tecnología para generar un impacto positivo en nuestra comunidad.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="../assets/images/icons/icon-integridad.svg" alt="Integridad">
+                    </div>
+                    <h3>Integridad</h3>
+                    <p>Valoramos la honestidad intelectual, el respeto y el compromiso con la verdad científica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cienc-IA Academy</h3>
+                    <p>"Aprende ciencia con ingeligencia."</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                        <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                        <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@cienciaacademy.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cienc-IA Academy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

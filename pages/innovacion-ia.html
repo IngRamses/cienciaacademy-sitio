@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación IA - Cienc-IA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-profundo: #0A2647;
+            --cian-brillante: #00B4D8;
+            --blanco-puro: #FFFFFF;
+            --verde-cientifico: #52B788;
+            --gris-neutro: #D9D9D9;
+            --azul-iconos: #1A4B8C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--azul-profundo);
+            line-height: 1.6;
+            background-color: var(--blanco-puro);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--azul-profundo);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cian-brillante);
+            color: var(--blanco-puro);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--azul-profundo);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--azul-profundo);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco-puro);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-ia {
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('../assets/images/hero/hero-ia.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        /* Ecosystem Section */
+        .ecosystem-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140px;
+        }
+
+        .tool-icon img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(22%) sepia(70%) saturate(1500%) hue-rotate(200deg) brightness(90%) contrast(90%);
+        }
+
+        .ai-assistants {
+            background-color: var(--gris-neutro);
+        }
+
+        .assistants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .assistant-card {
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .assistant-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .assistant-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+        }
+
+        .assistant-icon img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(22%) sepia(70%) saturate(1500%) hue-rotate(200deg) brightness(90%) contrast(90%);
+        }
+
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--azul-profundo);
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                margin: 0;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" aria-label="Ir al inicio"><img src="../assets/images/general/logo-ciencia-academy.png" alt="Cienc-IA Academy" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                    <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html" class="btn">Únete a la lista de interés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-ia">
+        <div class="container">
+            <h1>Innovación IA</h1>
+            <p>Exploramos herramientas tecnológicas para apoyar el aprendizaje</p>
+        </div>
+    </section>
+
+    <!-- Advantage Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Herramientas educativas de IA en desarrollo</h2>
+            <div class="ecosystem-section">
+                <h3>Nuestro proyecto de herramientas educativas</h3>
+                <p>Hoy el instructor usa herramientas de IA para preparar ejercicios y revisar explicaciones, y cada material pasa por revisión humana. El Tutor IA de Matemáticas está en desarrollo: próximamente, sin fecha, y solo para alumnos de 13 años o más, con consentimiento de la familia. Antes de activarlo pasa pruebas de seguridad, de privacidad y pedagógicas. Hoy no hay asistentes activos ni evaluación adaptativa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="text-align: center;">
+        <div class="container">
+            <h2>¿Quieres conocer nuestro proyecto de IA educativa?</h2>
+            <p>Contáctanos para recibir información sobre nuestras herramientas en desarrollo.</p>
+            <a href="contacto.html" class="btn" style="background-color: var(--verde-cientifico); margin-top: 1.5rem;">Solicita información</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cienc-IA Academy</h3>
+                    <p>"Aprende Cienc-IA con Inteligenc-IA"</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                        <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                        <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@cienciaacademy.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cienc-IA Academy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Académico - Cienc-IA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-profundo: #0A2647;
+            --cian-brillante: #00B4D8;
+            --blanco-puro: #FFFFFF;
+            --verde-cientifico: #52B788;
+            --gris-neutro: #D9D9D9;
+            --azul-iconos: #1A4B8C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--azul-profundo);
+            line-height: 1.6;
+            background-color: var(--blanco-puro);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--azul-profundo);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cian-brillante);
+            color: var(--blanco-puro);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--azul-profundo);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--azul-profundo);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco-puro);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-model {
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('../assets/images/hero/hero-modelo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        /* IA Learning Section */
+        .ia-learning-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .ia-learning-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Model 4C Section */
+        .model-4c {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .model-step {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .model-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .model-step-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+        }
+
+        .model-step-icon img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            /* Se eliminó el filtro para mantener los colores originales */
+        }
+
+        /* Evaluation Section */
+        .evaluation-section {
+            background-color: var(--gris-neutro);
+        }
+
+        .evaluation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .evaluation-item {
+            background-color: var(--blanco-puro);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .evaluation-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .evaluation-percentage {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--verde-cientifico);
+            margin-bottom: 0.5rem;
+        }
+
+        .content-center {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--azul-profundo);
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                margin: 0;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" aria-label="Ir al inicio"><img src="../assets/images/general/logo-ciencia-academy.png" alt="Cienc-IA Academy" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                    <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html" class="btn">Únete a la lista de interés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-model">
+        <div class="container">
+            <h1>Modelo Académico</h1>
+            <p>Conoce nuestra metodología 4C y las herramientas de IA educativa que estamos desarrollando</p>
+        </div>
+    </section>
+
+    <!-- IA Learning Section -->
+    <section class="ia-learning-section">
+        <div class="container">
+            <h2>Aprendizaje Basado en Ciencia + IA</h2>
+            <div class="ia-learning-content">
+                <h3>La Diferencia Cienc-IA</h3>
+                <p>Nuestro enfoque combina pedagogía científica con el diseño de herramientas de IA educativa todavía en desarrollo.</p>
+                <p style="margin-top: 1.5rem;">Buscamos adaptar las actividades de estudio al ritmo de aprendizaje de cada estudiante. Estamos desarrollando herramientas para identificar fortalezas y temas por reforzar; todavía no están disponibles para alumnos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model 4C Section -->
+    <section style="background-color: var(--gris-neutro);">
+        <div class="container">
+            <h2 class="section-title">La Metodología 4C: Nuestro Pilar Pedagógico</h2>
+            <p class="content-center" style="margin-bottom: 3rem;">Todo nuestro currículo, desde una clase de física hasta un curso de ingreso a la universidad, se estructura bajo nuestra Metodología 4C. No solo enseñamos ciencia; enseñamos cómo pensar científicamente.</p>
+            <div class="model-4c">
+                <div class="model-step">
+                    <div class="model-step-icon">
+                        <img src="../assets/images/icons/icon-comprender.svg" alt="Comprender">
+                    </div>
+                    <h3>Comprender</h3>
+                    <p>Dominar los fundamentos teóricos. Buscamos que cada estudiante construya una base sólida de los conceptos científicos y las leyes que rigen el universo.</p>
+                </div>
+                <div class="model-step">
+                    <div class="model-step-icon">
+                        <img src="../assets/images/icons/icon-conectar.svg" alt="Conectar">
+                    </div>
+                    <h3>Conectar</h3>
+                    <p>Vincular la teoría con la práctica. Demostramos cómo las fórmulas y los conceptos se aplican en el mundo real, conectando las ciencias entre sí y con aplicaciones transversales.</p>
+                </div>
+                <div class="model-step">
+                    <div class="model-step-icon">
+                        <img src="../assets/images/icons/icon-crear.svg" alt="Crear">
+                    </div>
+                    <h3>Crear</h3>
+                    <p>Resolver problemas reales. Impulsamos a los estudiantes a usar su conocimiento para crear soluciones, diseñar experimentos y resolver problemas complejos, tal como lo hace un científico.</p>
+                </div>
+                <div class="model-step">
+                    <div class="model-step-icon">
+                        <img src="../assets/images/icons/icon-comunicar.svg" alt="Comunicar">
+                    </div>
+                    <h3>Comunicar</h3>
+                    <p>Compartir el conocimiento. La ciencia que no se comparte, no avanza. Desarrollamos habilidades de presentación científica, argumentación y trabajo colaborativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evaluation Section -->
+    <section class="evaluation-section">
+        <div class="container">
+            <h2 class="section-title">Evaluación Continua e Inteligente</h2>
+            <p class="content-center" style="margin-bottom: 3rem;">Proponemos evaluar más que la memoria. Nuestra metodología contempla evaluaciones continuas y por competencias mediante ejercicios y proyectos.</p>
+            <p class="content-center" style="margin-bottom: 3rem;"><strong>Medimos el balance completo del aprendizaje:</strong></p>
+            <div class="evaluation-grid">
+                <div class="evaluation-item">
+                    <div class="evaluation-percentage">25%</div>
+                    <h3>Comprensión Teórica</h3>
+                    <p>Evaluación de conceptos fundamentales mediante cuestionarios y ejercicios conceptuales.</p>
+                </div>
+                <div class="evaluation-item">
+                    <div class="evaluation-percentage">30%</div>
+                    <h3>Aplicación Práctica</h3>
+                    <p>Resolución de problemas y casos de estudio que demuestran la aplicación del conocimiento.</p>
+                </div>
+                <div class="evaluation-item">
+                    <div class="evaluation-percentage">25%</div>
+                    <h3>Proyecto / Laboratorio</h3>
+                    <p>Desarrollo de proyectos científicos que integran múltiples conceptos y habilidades.</p>
+                </div>
+                <div class="evaluation-item">
+                    <div class="evaluation-percentage">20%</div>
+                    <h3>Actitud y Comunicación Científica</h3>
+                    <p>Participación activa, trabajo en equipo y desarrollo de habilidades de comunicación científica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="text-align: center;">
+        <div class="container">
+            <h2>¿Listo para experimentar nuestro modelo educativo?</h2>
+            <p>Únete a Cienc-IA Academy y descubre cómo podemos potenciar tu aprendizaje científico.</p>
+            <a href="contacto.html" class="btn" style="margin-top: 1.5rem;">Solicita más información</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cienc-IA Academy</h3>
+                    <p>"Aprende CiencIA con InteligencIA"</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                        <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                        <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@cienciaacademy.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cienc-IA Academy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

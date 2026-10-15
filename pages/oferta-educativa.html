@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Educativa - Cienc-IA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-profundo: #0A2647;
+            --cian-brillante: #00B4D8;
+            --blanco-puro: #FFFFFF;
+            --verde-cientifico: #52B788;
+            --gris-neutro: #D9D9D9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--azul-profundo);
+            line-height: 1.6;
+            background-color: var(--blanco-puro);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--azul-profundo);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cian-brillante);
+            color: var(--blanco-puro);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--azul-profundo);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--azul-profundo);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco-puro);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-oferta {
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('../assets/images/hero/hero-oferta.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        /* Programs Section */
+        .programs-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        /* Course Cards */
+        .course-detail {
+            background-color: var(--blanco-puro);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--cian-brillante);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--blanco-puro);
+            font-size: 1.2rem;
+        }
+
+        .course-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            margin-right: 0.8rem;
+            color: var(--verde-cientifico);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--azul-profundo);
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                margin: 0;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" aria-label="Ir al inicio"><img src="../assets/images/logo-ciencia-academy.png" alt="Cienc-IA Academy" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                    <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html" class="btn">Únete a la lista de interés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-oferta">
+        <div class="container">
+            <h1>Oferta Educativa</h1>
+            <p>Programas para fortalecer conocimientos académicos</p>
+        </div>
+    </section>
+
+    <!-- Programs Introduction -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Programas Diseñados para Tu Futuro</h2>
+            <div class="programs-intro">
+                <h3>Elige tu meta académica</h3>
+                <p>En Cienc-IA Academy presentamos opciones de estudio y refuerzo académico.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Course 1: Regularización -->
+    <section style="background-color: var(--gris-neutro);">
+        <div class="container">
+            <div class="course-detail">
+                <div class="course-header">
+                    <div class="course-icon">1</div>
+                    <div>
+                        <h3>Generación fundadora 2027-A</h3>
+                        <p><strong>8 lugares · 2.º y 3.º de secundaria</strong></p>
+                    </div>
+                </div>
+                <p>Matemáticas, Física, Química y Biología en vivo, de lunes a viernes a las 6:00 p. m. (45 min; Biología, los viernes a las 7:00 p. m.), del 8 de febrero al 4 de junio de 2027. Para alumnos de 2.º y 3.º de secundaria, de 13 años o más. Instructor: M. Sc. Ramses Omar López Soto. Materiales y tareas en Google Classroom. Incluye el Tutor IA de Matemáticas, que se activa cuando cumple nuestros criterios de seguridad y pedagogía (meta: febrero de 2027, sin fecha comprometida).</p>
+                
+                <h4 style="margin-top: 1.5rem;">Metodología</h4>
+                <div class="course-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Diagnóstico inicial</strong> para identificar áreas de oportunidad
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Ruta de aprendizaje personalizada</strong> según tus necesidades
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Seguimiento académico</strong> para identificar avances y temas por reforzar
+                        </div>
+                    </div>
+                </div>
+                <a href="contacto.html" class="btn">Únete a la lista de interés</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Course 2: Preparatoria -->
+    <section style="background-color: var(--gris-neutro);">
+        <div class="container">
+            <div class="course-detail">
+                <div class="course-header">
+                    <div class="course-icon">2</div>
+                    <div>
+                        <h3>Curso de ingreso a preparatoria</h3>
+                        <p><strong>Próximamente</strong></p>
+                    </div>
+                </div>
+                <p>Estamos preparando un curso de ingreso a preparatoria orientado al repaso de Matemáticas, Ciencias Naturales, Pensamiento Lógico y Habilidades Verbales. Su contenido y disponibilidad se anunciarán más adelante.</p>
+                
+                <h4 style="margin-top: 1.5rem;">Temas y actividades previstos</h4>
+                <div class="course-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Áreas de estudio previstas:</strong> Matemáticas Fundamentales, Pensamiento Lógico, Ciencias Naturales y Habilidades Verbales.
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Ejercicios tipo examen (en planeación):</strong> Práctica con diferentes formatos de preguntas.
+                        </div>
+                    </div>
+
+                </div>
+                <span class="btn" style="cursor: default;">Próximamente</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course 3: Universidad -->
+    <section>
+        <div class="container">
+            <div class="course-detail">
+                <div class="course-header">
+                    <div class="course-icon">3</div>
+                    <div>
+                        <h3>Curso de ingreso a universidad</h3>
+                        <p><strong>Próximamente</strong></p>
+                    </div>
+                </div>
+                <p>Estamos diseñando un curso de ingreso a universidad con repaso de contenidos académicos y estrategias generales de estudio. Su disponibilidad se anunciará más adelante.</p>
+                
+                <h4 style="margin-top: 1.5rem;">Temas y actividades previstos</h4>
+                <div class="course-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Ciencias Avanzadas:</strong> Cálculo, Física Dinámica, Química Orgánica y Biología Genética.
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Estrategia de Examen:</strong> Taller de razonamiento lógico y manejo de tiempos.
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Ejercicios de práctica (en planeación):</strong> Actividades para familiarizarse con distintos formatos de preguntas.
+                        </div>
+                    </div>
+                </div>
+                <span class="btn" style="cursor: default;">Próximamente</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section style="text-align: center;">
+        <div class="container">
+            <h2>¿No estás seguro de cuál programa elegir?</h2>
+            <p>¿Tienes dudas sobre los programas? Escríbenos para solicitar información.</p>
+            <a href="contacto.html" class="btn" style="background-color: var(--verde-cientifico); margin-top: 1.5rem;">Solicitar información</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cienc-IA Academy</h3>
+                    <p>"Aprende ciencia con inteligencia"</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                        <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                        <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@cienciaacademy.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cienc-IA Academy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
