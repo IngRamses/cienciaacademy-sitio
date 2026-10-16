@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de privacidad - Cienc-IA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-profundo: #0A2647;
+            --cian-brillante: #00B4D8;
+            --blanco-puro: #FFFFFF;
+            --verde-cientifico: #52B788;
+            --gris-neutro: #D9D9D9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--azul-profundo);
+            line-height: 1.6;
+            background-color: var(--blanco-puro);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--azul-profundo);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cian-brillante);
+            color: var(--blanco-puro);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--azul-profundo);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--azul-profundo);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco-puro);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-contacto {
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('../assets/images/hero/hero-contacto.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background-color: var(--gris-neutro);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            margin-right: 1rem;
+            color: var(--cian-brillante);
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--gris-neutro);
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--cian-brillante);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--azul-profundo);
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                margin: 0;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+        }
+
+        /* Aviso de privacidad */
+        .aviso {
+            max-width: 860px;
+        }
+
+        .aviso h1 {
+            font-size: 2rem;
+        }
+
+        .aviso h2 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+        }
+
+        .aviso p, .aviso ul, .aviso ol, .aviso table {
+            margin-bottom: 1rem;
+        }
+
+        .aviso ul, .aviso ol {
+            padding-left: 1.5rem;
+        }
+
+        .aviso table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .aviso th, .aviso td {
+            border: 1px solid var(--gris-neutro);
+            padding: 0.5rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .aviso th {
+            background-color: var(--azul-profundo);
+            color: var(--blanco-puro);
+        }
+
+        .aviso a {
+            color: var(--azul-profundo);
+        }
+
+        .aviso-version {
+            color: #555555;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .aviso table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" aria-label="Ir al inicio"><img src="../assets/images/logo-ciencia-academy.png" alt="Cienc-IA Academy" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                    <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html" class="btn">Únete a la lista de interés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Aviso de privacidad -->
+    <section>
+        <div class="container aviso">
+            <h1>Aviso de privacidad integral</h1>
+            <p class="aviso-version">Versión 1.0 · Fecha de última actualización: 16 de octubre de 2026</p>
+            <h2>1. Responsable</h2>
+            <p>Ramses Omar López Soto, persona física que ofrece servicios educativos bajo el nombre comercial <strong>Cienc-IA Academy</strong> (en adelante, "Cienc-IA Academy" o "nosotros"), con domicilio para oír y recibir notificaciones en Hacienda Mayorazgo 471, colonia Hacienda del Parque, código postal 54769, Cuautitlán Izcalli, Estado de México, es el responsable del tratamiento de los datos personales que usted nos proporcione y de los del alumno que usted representa.</p>
+            <p>Correo para temas de privacidad: <strong><a href="mailto:privacidad@cienciaacademy.org">privacidad@cienciaacademy.org</a></strong> · Sitio web: <a href="https://cienciaacademy.org">https://cienciaacademy.org</a></p>
+            <h2>2. A quién aplica este aviso</h2>
+            <p>A las madres, padres y tutores (en adelante, "usted"), a los alumnos que participan en nuestros programas y a los visitantes de nuestro sitio. Cubre todas las etapas de la relación: lista de interés, clases muestra, reserva, inscripción y curso.</p>
+            <h2>3. Datos personales que tratamos</h2>
+            <table>
+            <thead>
+            <tr>
+            <th>Etapa</th>
+            <th>Datos de la madre, padre o tutor</th>
+            <th>Datos del alumno</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Lista de interés</td>
+            <td>Nombre y apellido, parentesco, número de WhatsApp y correo electrónico</td>
+            <td>Nombre de pila, edad, grado escolar y turno escolar; materias de interés y clase muestra elegida</td>
+            </tr>
+            <tr>
+            <td>Clases muestra</td>
+            <td>—</td>
+            <td>Nombre con el que ingresa a Google Meet y, si el alumno activa cámara o micrófono, su imagen y voz durante la sesión. Las clases muestra no se graban</td>
+            </tr>
+            <tr>
+            <td>Reserva e inscripción</td>
+            <td>Nombre completo, parentesco, WhatsApp, correo electrónico, plan de pago elegido y comprobante de pago. Si solicita factura: RFC, nombre o razón social, régimen fiscal, código postal fiscal y uso del CFDI</td>
+            <td>Nombre completo, edad, grado, turno escolar y correo de su cuenta de Google</td>
+            </tr>
+            <tr>
+            <td>Curso</td>
+            <td>Comunicaciones sobre el avance y la organización del curso</td>
+            <td>Asistencia, participación, tareas, exámenes y calificaciones; imagen y voz durante las clases en vivo, si activa cámara o micrófono</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Datos patrimoniales o financieros.</strong> El comprobante de pago puede mostrar el nombre del banco, el nombre del titular y parte del número de cuenta. Solo lo usamos para conciliar el pago y, en su caso, emitir la factura. No recibimos ni guardamos números completos de tarjeta, NIP ni contraseñas bancarias. Su consentimiento expreso para este tratamiento se recaba en el formulario de reserva.</p>
+            <p><strong>Datos sensibles.</strong> No solicitamos datos personales sensibles, como datos de salud, condiciones de aprendizaje, origen étnico o creencias. Le pedimos no incluirlos en formularios ni mensajes. Si usted decide compartir información de salud o de aprendizaje del alumno para que adaptemos las clases, solo la usaremos para ese fin, y antes le pediremos su consentimiento expreso y por escrito.</p>
+            <h2>4. Finalidades</h2>
+            <p><strong>Finalidades necesarias</strong> (dan origen a la relación con usted y son indispensables para prestar el servicio):</p>
+            <ol>
+            <li>Registrar su interés y enviarle información de la generación fundadora 2027-A: clases muestra, apertura y condiciones de la reserva, y respuestas a sus preguntas.</li>
+            <li>Verificar que el alumno cumple los requisitos del programa (grado escolar, edad mínima de 13 años y horario compatible).</li>
+            <li>Organizar las clases muestra y enviarle el enlace de acceso.</li>
+            <li>Gestionar la reserva, la inscripción, los cobros, los reembolsos y, si la solicita, la factura.</li>
+            <li>Impartir las clases en vivo, dar acceso a Google Classroom, registrar la asistencia y el avance, y comunicar a la familia resultados, avisos y cambios del curso.</li>
+            <li>Cumplir obligaciones legales, en particular las fiscales; atender requerimientos de autoridad competente, y ejercer o defender derechos en caso de controversia.</li>
+            </ol>
+            <p><strong>Finalidades adicionales</strong> (requieren su consentimiento; si no lo otorga, el servicio no se ve afectado):</p>
+            <ol>
+            <li>Enviarle información sobre otros cursos y programas de Cienc-IA Academy, distintos de la generación fundadora 2027-A.</li>
+            <li>Invitarle a responder encuestas de satisfacción.</li>
+            </ol>
+            <p>Usamos información estadística sin datos que identifiquen a nadie (por ejemplo, cuántos alumnos asistieron) para mejorar el programa.</p>
+            <p><strong>Lo que no hacemos.</strong> No vendemos ni rentamos sus datos. No los usamos para crear perfiles publicitarios. No tomamos decisiones sobre el alumno de forma automatizada. <strong>No usamos la imagen, la voz, el nombre ni los trabajos del alumno en publicidad, redes sociales ni en nuestro sitio.</strong> Si en el futuro quisiéramos hacerlo, le pediríamos antes su autorización expresa y por escrito para cada uso concreto.</p>
+            <h2>5. Cómo negarse a las finalidades adicionales o limitar el uso de sus datos</h2>
+            <ul>
+            <li>En los formularios, las finalidades adicionales se aceptan solo marcando una casilla. Si no la marca, no las realizamos.</li>
+            <li>En cualquier momento puede retirar su aceptación escribiendo a privacidad@cienciaacademy.org con el asunto "Baja de avisos", o respondiendo "BAJA" a cualquiera de nuestros mensajes de WhatsApp.</li>
+            <li>También puede inscribirse en el Registro Público para Evitar Publicidad (REPEP) de la Procuraduría Federal del Consumidor.</li>
+            </ul>
+            <p>Negarse a las finalidades necesarias o revocar el consentimiento para ellas impide prestar el servicio, pero puede hacerlo en cualquier momento.</p>
+            <h2>6. Con quién compartimos sus datos</h2>
+            <p><strong>Proveedores que tratan datos por nuestra cuenta.</strong> Para operar usamos los siguientes servicios. Tratan los datos solo para prestarnos su servicio y bajo sus propias obligaciones de confidencialidad y seguridad:</p>
+            <ul>
+            <li><strong>Google</strong> (Google Workspace: correo, formularios, hojas de cálculo, almacenamiento, Google Meet y Google Classroom). Sus servidores pueden estar fuera de México.</li>
+            <li><strong>WhatsApp</strong> (Meta Platforms), para enviarle mensajes.</li>
+            <li>La institución bancaria o plataforma de pago que le indiquemos al momento del cobro.</li>
+            <li>En su caso, un contador externo, para cumplir obligaciones fiscales.</li>
+            </ul>
+            <p><strong>Transferencias.</strong> Solo comunicamos sus datos a terceros en los casos que la ley permite sin su consentimiento: al Servicio de Administración Tributaria, para emitir facturas; a autoridades competentes que lo requieran conforme a la ley, y cuando sea necesario para ejercer o defender un derecho en un proceso judicial. <strong>No realizamos transferencias que requieran su consentimiento.</strong> Si en el futuro fuera necesario, actualizaríamos este aviso y se lo pediríamos antes.</p>
+            <h2>7. Menores de edad</h2>
+            <ul>
+            <li>Nuestros programas actuales admiten solo a alumnos de <strong>13 años o más</strong>.</li>
+            <li>Los formularios deben llenarlos la madre, el padre o el tutor legal, que debe ser mayor de edad. Los datos del alumno se tratan con el consentimiento de quien ejerce la patria potestad o la tutela, como su representante legal. Si detectamos datos de un menor proporcionados sin ese consentimiento, los eliminamos.</li>
+            <li>Pedimos solo los datos del alumno indispensables para cada etapa. En la lista de interés basta su nombre de pila.</li>
+            <li>En las clases en vivo, la cámara y el micrófono del alumno son opcionales. Recomendamos que ingrese con su nombre de pila. Si activa la cámara, los demás participantes de la sesión verán su imagen. Está prohibido que cualquier participante grabe o capture la pantalla durante las clases.</li>
+            <li>Los derechos del alumno los ejerce su representante legal. Al cumplir 18 años, el alumno puede ejercerlos directamente.</li>
+            </ul>
+            <h2>8. Grabación de clases</h2>
+            <p>Las clases muestra no se graban. En el curso, cuando una clase se graba para consulta de los alumnos del grupo, <strong>la grabación registra solo la pantalla y la voz del instructor, no la imagen ni la voz de los alumnos</strong>. Las grabaciones se comparten únicamente con los alumnos inscritos en el grupo, mediante Google Classroom o un enlace no público, y se eliminan a más tardar 30 días después de terminado el ciclo.</p>
+            <h2>9. Uso de inteligencia artificial</h2>
+            <ul>
+            <li>El instructor usa herramientas de inteligencia artificial para preparar materiales y ejercicios, <strong>sin ingresar en ellas datos personales de alumnos ni familias</strong>. Todo material generado con inteligencia artificial pasa por revisión humana.</li>
+            <li>El Tutor IA de Cienc-IA Academy <strong>no está activo</strong>. Antes de activarlo, actualizaremos este aviso con el proveedor, los datos que procesa y su conservación, y pediremos el consentimiento expreso de la madre, el padre o el tutor. Solo podrán usarlo alumnos de 13 años o más.</li>
+            </ul>
+            <h2>10. Conservación</h2>
+            <ul>
+            <li><strong>Lista de interés sin inscripción:</strong> conservamos los datos hasta el 31 de marzo de 2027 y después los eliminamos. Si aceptó recibir información de otros programas (finalidad 7), los conservamos hasta que retire su aceptación, por un máximo de 24 meses desde su registro.</li>
+            <li><strong>Alumnos inscritos:</strong> durante el curso y hasta 12 meses después de que termine el ciclo. Después los eliminamos.</li>
+            <li><strong>Comprobantes y facturas:</strong> el tiempo que exijan las disposiciones fiscales.</li>
+            <li><strong>Grabaciones:</strong> se eliminan a más tardar 30 días después de terminado el ciclo.</li>
+            </ul>
+            <p>Cuando corresponda, antes de eliminarlos los conservamos bloqueados, sin usarlos, durante el plazo que señala la ley.</p>
+            <h2>11. Seguridad</h2>
+            <p>Protegemos sus datos con medidas administrativas, técnicas y físicas. Las cuentas de la academia usan verificación en dos pasos. Solo el responsable tiene acceso a los formularios y a sus respuestas, que no se comparten. Los enlaces de las clases se envían solo a las familias registradas. Si ocurre una vulneración de seguridad que afecte de forma significativa sus derechos, se lo informaremos de inmediato, junto con las medidas que tomemos.</p>
+            <h2>12. Derechos ARCO y revocación del consentimiento</h2>
+            <p>Usted puede <strong>acceder</strong> a sus datos, <strong>rectificarlos</strong>, pedir su <strong>cancelación</strong>, <strong>oponerse</strong> a su tratamiento o <strong>revocar</strong> su consentimiento. Para hacerlo, escriba a privacidad@cienciaacademy.org e incluya:</p>
+            <ol>
+            <li>Su nombre y un medio para recibir la respuesta (puede ser el mismo correo).</li>
+            <li>Copia de una identificación oficial vigente. Si actúa como representante, también el documento que lo acredite: por ejemplo, el acta de nacimiento del alumno o la resolución de tutela.</li>
+            <li>La descripción clara de los datos de que se trata (no es necesaria si pide acceso).</li>
+            <li>El derecho que desea ejercer o lo que solicita. Si pide una rectificación, indique el cambio y, en su caso, el documento que lo respalde.</li>
+            <li>Cualquier otro elemento que nos ayude a localizar los datos.</li>
+            </ol>
+            <p>Acusamos recibo en un máximo de 5 días hábiles. Le comunicamos nuestra respuesta en un máximo de <strong>20 días hábiles</strong> desde que recibimos la solicitud y, si procede, la hacemos efectiva dentro de los <strong>15 días hábiles</strong> siguientes. Ambos plazos pueden ampliarse una sola vez por un periodo igual, cuando las circunstancias lo justifiquen; en ese caso se lo informaremos. El ejercicio de estos derechos es <strong>gratuito</strong>; solo podríamos cobrar costos de reproducción o envío, cuando los haya.</p>
+            <p>La revocación del consentimiento no tiene efectos retroactivos. Si revoca el consentimiento para las finalidades necesarias, no podremos seguir prestando el servicio.</p>
+            <h2>13. Sitio web y tecnologías de rastreo</h2>
+            <p>Nuestro sitio cienciaacademy.org no usa cookies propias, herramientas de analítica ni otras tecnologías de rastreo, y no recaba datos mediante formularios propios. Para mostrar las tipografías, su navegador se conecta a los servidores de Google Fonts, y el sitio se aloja en GitHub Pages; estos proveedores pueden registrar datos técnicos, como la dirección IP, conforme a sus propias políticas. Los formularios de Google que usamos pueden usar cookies de Google conforme a sus políticas.</p>
+            <h2>14. Autoridad</h2>
+            <p>Si considera que su derecho a la protección de datos personales fue vulnerado, puede acudir a la Secretaría Anticorrupción y Buen Gobierno, autoridad competente en la materia.</p>
+            <h2>15. Cambios a este aviso</h2>
+            <p>Publicamos este aviso, con su fecha y versión, en cienciaacademy.org, y conservamos sus versiones anteriores. Si lo modificamos, avisaremos a las familias registradas por correo electrónico o WhatsApp. Si el cambio agrega finalidades que requieran consentimiento, se lo pediremos antes de aplicarlas.</p>
+            <h2>16. Consentimiento</h2>
+            <p>Al enviar nuestros formularios después de leer este aviso y marcar la casilla correspondiente, usted otorga su consentimiento para tratar sus datos y los del alumno conforme a las finalidades necesarias, y, solo si marca la casilla respectiva, para las adicionales. El consentimiento expreso para tratar el comprobante de pago se recaba en el formulario de reserva.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cienc-IA Academy</h3>
+                    <p>"Aprende Cienc-IA con Inteligenc-IA"</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="modelo-academico.html">Modelo Académico</a></li>
+                        <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                        <li><a href="innovacion-ia.html">Innovación IA</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@cienciaacademy.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cienc-IA Academy. Todos los derechos reservados.</p>
+                <p><a href="aviso-de-privacidad.html" style="color: inherit;">Aviso de privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
