@@ -321,6 +321,43 @@
                 font-size: 1.1rem;
             }
         }
+        /* Tarjetas con imagen */
+        .course-detail.has-image {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .course-image img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .course-badge {
+            display: inline-block;
+            background-color: var(--verde-cientifico);
+            color: var(--blanco-puro);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .course-detail.has-image {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .course-image img {
+                aspect-ratio: 4 / 3;
+            }
+        }
     </style>
 </head>
 <body>
@@ -364,7 +401,11 @@
     <!-- Course 1: Regularización -->
     <section style="background-color: var(--gris-neutro);">
         <div class="container">
-            <div class="course-detail">
+            <div class="course-detail has-image">
+                <div class="course-image">
+                    <img src="../assets/images/courses/curso-preparatoria.jpg" alt="Grupo de alumnos de secundaria estudiando juntos">
+                </div>
+                <div>
                 <div class="course-header">
                     <div class="course-icon">1</div>
                     <div>
@@ -397,17 +438,99 @@
                     </div>
                 </div>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScrqjBEIfdcCrmgaC7dbi5Xk3SQpHmgz5KaGYGZAWSR4q2AVg/viewform" class="btn" target="_blank" rel="noopener">Únete a la lista de interés</a>
+                </div>
             </div>
         </div>
     </section>
 
     
+    <!-- Course 2: Clases particulares -->
+    <section id="clases-particulares">
+        <div class="container">
+            <div class="course-detail has-image">
+                <div class="course-image">
+                    <img src="../assets/images/courses/curso-regulares.jpg" alt="Alumno en una clase en línea uno a uno con su instructor">
+                </div>
+                <div>
+                    <div class="course-header">
+                        <div class="course-icon">2</div>
+                        <div>
+                            <h3>Clases particulares uno a uno</h3>
+                            <p><strong>Primaria, secundaria y preparatoria · en vivo por Google Meet</strong></p>
+                        </div>
+                    </div>
+                    <p>Clases individuales enfocadas en lo que el alumno necesita: dudas de su clase, temas atrasados o el repaso antes de un examen de su escuela. En primaria, Matemáticas; en secundaria y preparatoria, Matemáticas, Física, Química o Biología. Disponibles a partir de diciembre de 2026. Horario a convenir. Instructor: M. Sc. Ramses Omar López Soto.</p>
+
+                    <h4 style="margin-top: 1.5rem;">Cómo funcionan</h4>
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div><strong>Temas a la medida</strong> del alumno, sesión por sesión</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div><strong>Horario flexible</strong> acordado con la familia</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div><strong>Atención completa</strong> del instructor durante toda la sesión</div>
+                        </div>
+                    </div>
+                    <a href="mailto:contacto@cienciaacademy.org?subject=Clases%20particulares" class="btn">Solicitar información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course 3: Python -->
+    <section id="python" style="background-color: var(--gris-neutro);">
+        <div class="container">
+            <div class="course-detail has-image">
+                <div class="course-image">
+                    <img src="../assets/images/courses/curso-python.svg" alt="Ventana de código con un programa en Python">
+                </div>
+                <div>
+                    <div class="course-header">
+                        <div class="course-icon">3</div>
+                        <div>
+                            <h3>Programación con Python</h3>
+                            <p><strong>Secundaria y preparatoria · en línea, a tu ritmo</strong></p>
+                        </div>
+                    </div>
+                    <span class="course-badge">Gratis para la generación fundadora 2027-A</span>
+                    <p>Aprende a programar desde cero con Python, uno de los lenguajes más usados en ciencia, análisis de datos e inteligencia artificial. Curso en línea que avanzas a tu ritmo, disponible a partir del 8 de febrero de 2027. Cada tema se practica con ejercicios y problemas de ciencias. Incluye resolución de dudas con el Tutor IA, que se activa cuando cumple nuestros criterios de seguridad y pedagogía.</p>
+
+                    <h4 style="margin-top: 1.5rem;">Qué incluye</h4>
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div><strong>Desde cero:</strong> no requiere experiencia previa en programación</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div><strong>Práctica en cada lección</strong> con ejercicios guiados</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div><strong>Proyecto final</strong> con datos reales</div>
+                        </div>
+                    </div>
+                    <a href="mailto:contacto@cienciaacademy.org?subject=Curso%20de%20Python" class="btn">Solicitar información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Course 2: Preparatoria -->
     <section style="background-color: var(--gris-neutro);">
         <div class="container">
-            <div class="course-detail">
+            <div class="course-detail has-image">
+                <div class="course-image">
+                    <img src="../assets/images/courses/curso-universidad.jpg" alt="Alumno estudiando con audífonos y tableta">
+                </div>
+                <div>
                 <div class="course-header">
-                    <div class="course-icon">2</div>
+                    <div class="course-icon">4</div>
                     <div>
                         <h3>Curso de ingreso a preparatoria</h3>
                         <p><strong>Próximamente</strong></p>
@@ -432,6 +555,7 @@
 
                 </div>
                 <span class="btn" style="cursor: default;">Próximamente</span>
+                </div>
             </div>
         </div>
     </section>
@@ -439,9 +563,13 @@
     <!-- Course 3: Universidad -->
     <section>
         <div class="container">
-            <div class="course-detail">
+            <div class="course-detail has-image">
+                <div class="course-image">
+                    <img src="../assets/images/courses_portada.jpg" alt="Laboratorio de ciencias con elementos de inteligencia artificial">
+                </div>
+                <div>
                 <div class="course-header">
-                    <div class="course-icon">3</div>
+                    <div class="course-icon">5</div>
                     <div>
                         <h3>Curso de ingreso a universidad</h3>
                         <p><strong>Próximamente</strong></p>
@@ -471,6 +599,7 @@
                     </div>
                 </div>
                 <span class="btn" style="cursor: default;">Próximamente</span>
+                </div>
             </div>
         </div>
     </section>
